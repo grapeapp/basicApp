@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="it.grapeapp.mobileapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <feature name="Camera">
+        <param name="browser-package" value="Camera" />
+    </feature>
+    <feature name="Device">
+        <param name="browser-package" value="Device" />
+    </feature>
+    <name>GrapeApp.it</name>
+    <description>
+        Esplora, Visita e Degusta! Il viaggio tra i migliori vigneti d'Italia è appena iniziato...
+		Sei un appassionato, un amatore o semplicemente vuoi fare una passeggiata fra le vigne sorseggiando del buon vino?
+		GrapeApp ti dà la possibilità di trovare la cantina e scegliere l'esperienza enologica che fa per te.
+		
+		GrapeApp è il collegamento tra le cantine che producono vino e gli appassionati che vogliono degustare direttamente nel luogo di produzione, creando un filo diretto tra i consumatori e il vino fatto bene e fatto in "casa".
+		GrapeApp raccoglie e promuove gli eventi e le degustazioni delle cantine che investono nell'accoglienza turistica in Italia.
+
+		...e per prenotare basta un click!
+		Con GrapeApp scegli la cantina o l'evento che fa per te, prenota tramite il nosto sito e sei pronto per andare a scoprire le tipicità che la cantina propone.
+    </description>
+    <author email="info@grapeapp.it" href="https://www.grapeapp.it/">GrapeApp.it Team</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14" />
+</widget>

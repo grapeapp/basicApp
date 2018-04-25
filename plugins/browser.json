@@ -1,0 +1,73 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        }
+    }
+}
