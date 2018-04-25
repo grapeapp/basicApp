@@ -46,9 +46,13 @@ var app = {
 			case 'deviceready':
 				document.getElementById('app').setAttribute('style', 'display:none;');
 				
-				let iframe = document.getElementById('mainFrame');
-				iframe.setAttribute('style', 'display:block; height:' + window.innerHeight + 'px; width:' + window.innerWidth + 'px;');
+				/*let iframe = document.getElementById('mainFrame');
+				iframe.setAttribute('style', 'display:block; height:' + window.innerHeight + 'px; width:' + window.innerWidth + 'px;');*/
 				
+				let site = document.getElementById('site');
+				site.innerHTML = '<object type="text/html" id="siteObj" data="https://www.grapeapp.it/mobile/"></object>';
+				document.getElementById('siteObj').setAttribute('style', 'display:block; height:' + window.innerHeight + 'px; width:' + window.innerWidth + 'px;');
+
 				console.log('Received Event: ' + id);
 			break;
 			case 'online':
