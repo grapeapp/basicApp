@@ -40,24 +40,45 @@ var app = {
 		app.receivedEvent('deviceready');
 	},
 	
+	loadStopHandler: function(ref){
+		ref.executeScript({ code: "sessionStorage.setItem('isApp','OK');" });
+	},
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        switch(id){
+        console.log('Received Event: ' + id);
+		switch(id){
 			case 'deviceready':
-				document.getElementById('app').setAttribute('style', 'display:none;');
-				
-				/*let iframe = document.getElementById('mainFrame');
-				iframe.setAttribute('style', 'display:block; height:' + window.innerHeight + 'px; width:' + window.innerWidth + 'px;');*/
-				
-				let site = document.getElementById('site');
-				site.innerHTML = '<object type="text/html" id="siteObj" data="https://www.grapeapp.it/mobile/"></object>';
-				document.getElementById('siteObj').setAttribute('style', 'display:block; height:' + window.innerHeight + 'px; width:' + window.innerWidth + 'px;');
+				var onSuccess = function(position) {
+					$.get("https://maps.googleapis.com/maps/api/geocode/json?key= AIzaSyDBrp0u-6LHKUJvC98SV5tPlny4SR5M7gk&latlng="+(position.coords.latitude + "," + position.coords.longitude), function(response){
+						let region = response.results[0].address_components[5].long_name;
+						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/mobile/'+region, '_blank', 'location=no');
+						ref.addEventListener("loadstop", function(){
+							app.loadStopHandler(ref);
+						}.bind(this));
+						ref.show();
+					}).fail(function(){
+						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/mobile/', '_blank', 'location=no');
+						ref.addEventListener("loadstop", function(){
+							app.loadStopHandler(ref);
+						}.bind(this));
+						ref.show();
+					});
+				};
 
-				console.log('Received Event: ' + id);
+				function onError(error) {
+					var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/mobile/', '_blank', 'location=no');
+					ref.addEventListener("loadstop", function(){
+						app.loadStopHandler(ref);
+					}.bind(this));
+					ref.show();
+				}
+
+				document.getElementById('app').setAttribute('style', 'display:none;');
+				navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true});
 			break;
 			case 'online':
 				//Nessuna azione da compiere
-				//this.receivedEvent('deviceready');
 			break;
 			case 'offline':
 				//Gestione offline: app non funzionante
