@@ -52,13 +52,14 @@ var app = {
 				var onSuccess = function(position) {
 					$.get("https://maps.googleapis.com/maps/api/geocode/json?key= AIzaSyDBrp0u-6LHKUJvC98SV5tPlny4SR5M7gk&latlng="+(position.coords.latitude + "," + position.coords.longitude), function(response){
 						let region = response.results[0].address_components[5].long_name;
-						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/mobile/'+region, '_blank', 'location=no');
+						region = region.replace(/[^a-zA-Z]/g, "");
+						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/'+region, '_blank', 'location=no');
 						ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
 						}.bind(this));
 						ref.show();
 					}).fail(function(){
-						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/mobile/', '_blank', 'location=no');
+						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
 						ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
 						}.bind(this));
@@ -67,7 +68,7 @@ var app = {
 				};
 
 				function onError(error) {
-					var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/mobile/', '_blank', 'location=no');
+					var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
 					ref.addEventListener("loadstop", function(){
 						app.loadStopHandler(ref);
 					}.bind(this));
