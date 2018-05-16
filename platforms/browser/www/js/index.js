@@ -41,7 +41,7 @@ var app = {
 	},
 	
 	loadStopHandler: function(ref){
-		ref.executeScript({ code: "sessionStorage.setItem('isApp','OK');" });
+		//ref.executeScript({ code: "sessionStorage.setItem('isApp','OK');" });
 	},
 
     // Update DOM on a Received Event
@@ -54,24 +54,24 @@ var app = {
 						let region = response.results[0].address_components[5].long_name;
 						region = region.replace(/[^a-zA-Z]/g, "");
 						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/'+region, '_blank', 'location=no');
-						ref.addEventListener("loadstop", function(){
+						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
-						}.bind(this));
+						}.bind(this));*/
 						ref.show();
 					}).fail(function(){
 						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
-						ref.addEventListener("loadstop", function(){
+						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
-						}.bind(this));
+						}.bind(this));*/
 						ref.show();
 					});
 				};
 
 				function onError(error) {
 					var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
-					ref.addEventListener("loadstop", function(){
+					/*ref.addEventListener("loadstop", function(){
 						app.loadStopHandler(ref);
-					}.bind(this));
+					}.bind(this));*/
 					ref.show();
 				}
 
