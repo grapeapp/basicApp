@@ -1,3 +1,3 @@
 # GrapeApp - App
 
-Version 0.0.1 (alpha)(17/05/2018)
+Version 0.1.0 (beta) (26/05/2018)
