@@ -50,9 +50,20 @@ var app = {
 		switch(id){
 			case 'deviceready':
 				var onSuccess = function(position) {
-					$.get("https://maps.googleapis.com/maps/api/geocode/json?key= AIzaSyDBrp0u-6LHKUJvC98SV5tPlny4SR5M7gk&latlng="+(position.coords.latitude + "," + position.coords.longitude), function(response){
-						let region = response.results[0].address_components[5].long_name;
+					$.get("https://maps.googleapis.com/maps/api/geocode/json?region=IT&key=AIzaSyDBrp0u-6LHKUJvC98SV5tPlny4SR5M7gk&latlng="+(position.coords.latitude + "," + position.coords.longitude), function(response){
+						
+						//Cerco all'interno del risultato la REGIONE
+						region = 'FAIL';
+						for(let i = 0; i < response.results.length; i++){
+							for(let c = 0; c < response.results[i].address_components.length; c++){
+								if(response.results[i].address_components[c].types.indexOf("administrative_area_level_1") >= 0){
+									region = response.results[i].address_components[c].long_name;
+								}
+							}
+						}
+						//Pulisco location da spazi e trattini
 						region = region.replace(/[^a-zA-Z]/g, "");
+						
 						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/'+region, '_blank', 'location=no');
 						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
@@ -74,7 +85,6 @@ var app = {
 					}.bind(this));*/
 					ref.show();
 				}
-
 				document.getElementById('app').setAttribute('style', 'display:none;');
 				navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true});
 			break;

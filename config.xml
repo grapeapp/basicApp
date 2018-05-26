@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="it.grapeapp.mobileapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="it.grapeapp.mobileapp" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>GrapeApp.it</name>
     <description>
         Esplora, Visita e Degusta! Il viaggio tra i migliori vigneti d'Italia è appena iniziato...
@@ -15,7 +15,7 @@
     <author email="info@grapeapp.it" href="https://www.grapeapp.it/">GrapeApp.it Team</author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="21" />
     <!--<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />-->
     <!--<plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />-->
     <!--<plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />-->
