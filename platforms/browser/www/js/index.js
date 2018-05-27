@@ -42,7 +42,7 @@ var app = {
 	},
 
 	backEvent: function(e){
-		e.preventDefault();
+		//e.preventDefault();
 		app.receivedEvent('backbutton');
 	},
 	
@@ -74,12 +74,18 @@ var app = {
 						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
 						}.bind(this));*/
+						ref.addEventListener('exit', function(){
+							navigator.app.exitApp();
+						});
 						ref.show();
 					}).fail(function(){
 						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
 						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
 						}.bind(this));*/
+						ref.addEventListener('exit', function(){
+							navigator.app.exitApp();
+						});
 						ref.show();
 					});
 				};
@@ -89,6 +95,9 @@ var app = {
 					/*ref.addEventListener("loadstop", function(){
 						app.loadStopHandler(ref);
 					}.bind(this));*/
+					ref.addEventListener('exit', function(){
+						navigator.app.exitApp();
+					});
 					ref.show();
 				}
 				document.getElementById('app').setAttribute('style', 'display:none;');
@@ -105,11 +114,12 @@ var app = {
 				document.getElementById('app').setAttribute('style', 'display:block;');
 			break;
 			case 'backbutton':
-				navigator.notification.confirm('Vuoi uscire dall\'applicazione?',function(r){
+				//Nessuna azione da compiere
+				/*navigator.notification.confirm('Vuoi uscire dall\'applicazione?',function(r){
 					if(r == 2){
 						navigator.app.exitApp();
 					}
-				},'GrapeApp.it', ['No','Si']);
+				},'GrapeApp.it', ['No','Si']);*/
 			break;
 		}
     }
