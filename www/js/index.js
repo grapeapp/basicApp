@@ -26,6 +26,7 @@ var app = {
         document.addEventListener('online', this.onOnline, false);
         document.addEventListener('offline', this.onOffline, false);
 		document.addEventListener('deviceready', this.onReady, false);
+		document.addEventListener("backbutton", this.backEvent, false);
     },
     
 	onOnline: function() {
@@ -38,6 +39,11 @@ var app = {
 	
 	onReady: function(){
 		app.receivedEvent('deviceready');
+	},
+
+	backEvent: function(e){
+		e.preventDefault();
+		app.receivedEvent('backbutton');
 	},
 	
 	loadStopHandler: function(ref){
@@ -97,6 +103,13 @@ var app = {
 				document.getElementById('offline').setAttribute('style', 'display: block;');
 				document.getElementById('deviceready').setAttribute('style', 'display:none;');
 				document.getElementById('app').setAttribute('style', 'display:block;');
+			break;
+			case 'backbutton':
+				navigator.notification.confirm('Vuoi uscire dall\'applicazione?',function(r){
+					if(r == 2){
+						navigator.app.exitApp();
+					}
+				},'GrapeApp.it', ['No','Si']);
 			break;
 		}
     }
