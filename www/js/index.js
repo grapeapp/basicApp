@@ -100,7 +100,6 @@ var app = {
 					});
 					ref.show();
 				}
-				document.getElementById('app').setAttribute('style', 'display:none;');
 				navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true});
 			break;
 			case 'online':
