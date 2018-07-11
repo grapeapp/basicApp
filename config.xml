@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="it.grapeapp.mobileapp" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="it.grapeapp.mobileapp" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android = "http://schemas.android.com/apk/res/android">
     <name>GrapeApp.it</name>
     <description>
         Esplora, Visita e Degusta! Il viaggio tra i migliori vigneti d'Italia è appena iniziato...
@@ -16,7 +16,6 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="23" />
-    <preference name="android-windowSoftInputMode" value="adjustPan|stateHidden" /> <!--https://developer.android.com/guide/topics/manifest/activity-element#wsoft-->
     <!--<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />-->
     <!--<plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />-->
     <!--<plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />-->
@@ -57,6 +56,10 @@
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
     </platform>
+    <config-file platform="android" parent="/manifest" mode="merge">
+        <!--<preference name="android-windowSoftInputMode" value="adjustPan|stateHidden" />-->
+        <activity android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustPan" />
+    </config-file>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
