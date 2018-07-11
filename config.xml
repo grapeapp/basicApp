@@ -16,6 +16,7 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="23" />
+    <preference name="android-windowSoftInputMode" value="stateHidden|adjustPan" /> <!--https://developer.android.com/guide/topics/manifest/activity-element#wsoft-->
     <!--<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />-->
     <!--<plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />-->
     <!--<plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />-->
