@@ -56,9 +56,9 @@
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
     </platform>
-    <config-file platform="android" parent="/manifest" mode="add">
+    <config-file platform="android" parent="/manifest" mode="merge">
         <!--<preference name="android-windowSoftInputMode" value="adjustPan|stateHidden" />-->
-        <activity android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustPan" />
+        <activity android:windowSoftInputMode="adjustPan|stateHidden" />
     </config-file>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
