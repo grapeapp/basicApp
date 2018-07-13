@@ -100,7 +100,7 @@ var app = {
 					});
 					ref.show();
 				}
-				navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true});
+				navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, timeout: 5000});
 			break;
 			case 'online':
 				//Nessuna azione da compiere
