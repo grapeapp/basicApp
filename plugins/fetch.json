@@ -158,5 +158,37 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cl.rmd.cordova.dialoggps": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-dialog-gps"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova.plugins.diagnostic": {
+        "source": {
+            "type": "registry",
+            "id": "cordova.plugins.diagnostic"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-request-location-accuracy": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-request-location-accuracy"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-open-native-settings": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-open-native-settings@1.5.1"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

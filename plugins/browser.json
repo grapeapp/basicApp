@@ -63,6 +63,18 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cl.rmd.cordova.dialoggps": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-plugin-request-location-accuracy": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
+        },
+        "cordova-open-native-settings": {
+            "PACKAGE_NAME": "it.grapeapp.mobileapp"
         }
     },
     "dependent_plugins": {

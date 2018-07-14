@@ -83,9 +83,11 @@ var app = {
 						ref.show();
 					}).fail(function(){
 						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
+						
 						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
 						}.bind(this));*/
+
 						ref.addEventListener('exit', function(){
 							navigator.app.exitApp();
 						});
@@ -94,14 +96,29 @@ var app = {
 				};
 
 				function onError(error) {
-					var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
-					/*ref.addEventListener("loadstop", function(){
-						app.loadStopHandler(ref);
-					}.bind(this));*/
-					ref.addEventListener('exit', function(){
-						navigator.app.exitApp();
-					});
-					ref.show();
+					//Visualizzo un messaggio per attivare la geolocalizzazione
+					navigator.notification.confirm("Per poterti proporre le cantine accoglienti intorno a te abbiamo bisogno di conoscere la tua posizione: attiva il GPS nel tuo telefono e rientra nell'app per sfruttare al meglio i servizi GrapeApp", function(btIndex){
+						if(btIndex == 2){
+							if (cordova && cordova.plugins.settings) {
+								window.cordova.plugins.settings.open("location", function() {
+									navigator.notification.alert('qui');
+									},
+									function () {
+										navigator.notification.alert('quiERR');
+									}
+								);
+							} else {
+								navigator.notification.alert('quiERR1');
+							}
+						} else {
+							var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
+
+							ref.addEventListener('exit', function(){
+								navigator.app.exitApp();
+							});
+							ref.show();
+						}
+					}, "Geolocalizzazione non riuscita", ["Continua senza GPS", "Attiva il GPS"]);
 				}
 				navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, timeout: 5000});
 			break;
