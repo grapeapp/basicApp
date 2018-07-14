@@ -19,7 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+		this.bindEvents();
     },
     
 	bindEvents: function() {
@@ -39,6 +39,9 @@ var app = {
 	
 	onReady: function(){
 		app.receivedEvent('deviceready');
+
+		//L'app funziona solo in modalità portrait
+		screen.orientation.lock('portrait');
 	},
 
 	backEvent: function(e){
