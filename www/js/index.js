@@ -106,8 +106,8 @@ var app = {
 									cordova.plugins.settings.open("location", function() {}, function () {
 											navigator.notification.alert('Impossibile accedere alle impostazioni di sistema', function(){}, 'Errore');
 										}
-									/*);
-								}
+									);
+								/*}
 							}, cordova.plugins.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY);*/
 						}
 					}, "Geolocalizzazione non riuscita", ["Continua senza GPS", "Attiva il GPS"]);
