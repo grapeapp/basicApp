@@ -110,7 +110,7 @@ var app = {
 								//Nessuna azione da compiere
 							}, function(){
 								if(error.code !== cordova.plugins.locationAccuracy.ERROR_USER_DISAGREED){*/
-									cordova.plugins.settings.open("location", function() {}, function () {
+									cordova.plugins.settings.open(["location", true], function() {}, function () {
 											navigator.notification.alert('Impossibile accedere alle impostazioni di sistema', function(){}, 'Errore');
 										}
 									);
