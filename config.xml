@@ -26,8 +26,6 @@
     <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
     <plugin name="cordova-open-native-settings" source="npm" />
-    <plugin name="cordova.plugins.diagnostic" source="npm" />
-    <preference name="cordova.plugins.diagnostic.modules" value="" />
     <plugin name="cordova-plugin-request-location-accuracy" source="npm" />    
     <!--<plugin name="cordova-plugin-file" source="npm" spec="~4.1.1" />
     <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.5.0" />-->

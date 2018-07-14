@@ -98,19 +98,15 @@ var app = {
 				function onError(error) {
 					//Visualizzo un messaggio per attivare la geolocalizzazione
 					navigator.notification.confirm("Per poterti proporre le cantine accoglienti intorno a te abbiamo bisogno di conoscere la tua posizione: attiva il GPS nel tuo telefono e rientra nell'app per sfruttare al meglio i servizi GrapeApp", function(btIndex){
-						if(btIndex == 2){
-							/*if (cordova && cordova.plugins.settings) {
-								window.cordova.plugins.settings.open("location", function() {},
-									function () {
-										navigator.notification.alert('Impossibile accedere alle impostazioni di sistema', function(){}, 'Errore');
-									}
-								);
-							}*/							
+						if(btIndex == 2){						
 							cordova.plugins.locationAccuracy.request(function(){
 								//Nessuna azione da compiere
 							}, function(){
 								if(error.code !== cordova.plugins.locationAccuracy.ERROR_USER_DISAGREED){
-									cordova.plugins.diagnostic.switchToLocationSettings();
+									cordova.plugins.settings.open("location", function() {}, function () {
+											navigator.notification.alert('Impossibile accedere alle impostazioni di sistema', function(){}, 'Errore');
+										}
+									);
 								}
 							}, cordova.plugins.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY);
 						}
