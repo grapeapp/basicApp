@@ -41,7 +41,7 @@ var app = {
 		app.receivedEvent('deviceready');
 
 		//L'app funziona solo in modalità portrait
-		screen.orientation.lock('portrait');
+		//screen.orientation.lock('portrait');
 	},
 
 	backEvent: function(e){
