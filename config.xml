@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="it.grapeapp.mobileapp" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android = "http://schemas.android.com/apk/res/android">
+<widget id="it.grapeapp.mobileapp" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android = "http://schemas.android.com/apk/res/android">
     <name>GrapeApp.it</name>
     <description>
         Esplora, Visita e Degusta! Il viaggio tra i migliori vigneti d'Italia è appena iniziato...
@@ -101,4 +101,8 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <!-- For iOS only -->
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Abbiamo bisogno di conoscere la tua posizione per visualizzare le cantine più vicine a te</string>
+    </edit-config>
 </widget>
