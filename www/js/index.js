@@ -70,7 +70,7 @@ var app = {
 						//Pulisco location da spazi e trattini
 						region = region.replace(/[^a-zA-Z]/g, "");
 						
-						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/'+region, '_blank', 'location=no,hidenavigationbuttons=yes');
+						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/'+region, '_blank', 'location=no,toolbar=no');
 						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
 						}.bind(this));*/
@@ -79,7 +79,7 @@ var app = {
 						});
 						ref.show();
 					}).fail(function(){
-						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no,hidenavigationbuttons=yes');
+						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no,toolbar=no');
 						
 						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
@@ -93,7 +93,7 @@ var app = {
 				};
 
 				function onError(error) {
-					var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no,hidenavigationbuttons=yes');
+					var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no,toolbar=no');
 
 					ref.addEventListener('exit', function(){
 						navigator.app.exitApp();
