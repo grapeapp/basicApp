@@ -56,6 +56,7 @@ var app = {
 		switch(id){
 			case 'deviceready':
 				var onSuccess = function(position) {
+					alert('qui2');
 					$.get("https://maps.googleapis.com/maps/api/geocode/json?region=IT&key=AIzaSyDBrp0u-6LHKUJvC98SV5tPlny4SR5M7gk&latlng="+(position.coords.latitude + "," + position.coords.longitude), function(response){
 						
 						//Cerco all'interno del risultato la REGIONE
@@ -69,7 +70,7 @@ var app = {
 						}
 						//Pulisco location da spazi e trattini
 						region = region.replace(/[^a-zA-Z]/g, "");
-						
+						alert('qui3');
 						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/'+region, '_blank', 'location=no');
 						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
@@ -79,6 +80,7 @@ var app = {
 						});
 						ref.show();
 					}).fail(function(){
+						alert('qui4');
 						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
 						
 						/*ref.addEventListener("loadstop", function(){
@@ -93,6 +95,7 @@ var app = {
 				};
 
 				function onError(error) {
+					alert('qui5');
 					var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no');
 
 					ref.addEventListener('exit', function(){
@@ -118,6 +121,7 @@ var app = {
 						}
 					}, "Geolocalizzazione non riuscita", ["Continua senza GPS", "Attiva il GPS"]);
 				}
+				alert('qui');
 				navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, timeout: 5000});
 			break;
 			case 'online':
