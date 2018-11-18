@@ -102,9 +102,12 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <!-- For iOS only -->
-    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+    <!--<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
         <string>GrapeApp ha bisogno di conoscere la tua posizione per visualizzare le cantine più vicine a te</string>
-    </edit-config>
+    </edit-config>-->
+    <gap:config-file overwrite="true" parent="NSLocationWhenInUseUsageDescription" platform="ios">
+        <string>GrapeApp ha bisogno di conoscere la tua posizione per visualizzare le cantine più vicine a te</string>
+    </gap:config-file>
     <edit-config file="*-Info.plist" mode="merge" target="UIStatusBarHidden"><true /></edit-config>
     <edit-config file="*-Info.plist" mode="merge" target="UIViewControllerBasedStatusBarAppearance"><false /></edit-config>
 </widget>
