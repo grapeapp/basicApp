@@ -77,27 +77,33 @@ var app = {
 						ref.addEventListener('exit', function(){
 							navigator.app.exitApp();
 						});
+						ref.addEventListener('loadstart', function(){
+							document.getElementById('deviceready').setAttribute('style', 'display:none;');
+						}.bind(this));
 						ref.show();
 					}).fail(function(){
 						var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no,toolbar=no');
-						
 						/*ref.addEventListener("loadstop", function(){
 							app.loadStopHandler(ref);
 						}.bind(this));*/
-
 						ref.addEventListener('exit', function(){
 							navigator.app.exitApp();
 						});
+						ref.addEventListener('loadstart', function(){
+							document.getElementById('deviceready').setAttribute('style', 'display:none;');
+						}.bind(this));
 						ref.show();
 					});
 				};
 
 				function onError(error) {
 					var ref = cordova.InAppBrowser.open('https://www.grapeapp.it/app/FAIL', '_blank', 'location=no,toolbar=no');
-
 					ref.addEventListener('exit', function(){
 						navigator.app.exitApp();
 					});
+					ref.addEventListener('loadstart', function(){
+						document.getElementById('deviceready').setAttribute('style', 'display:none;');
+					}.bind(this));
 					ref.show();
 					
 					//Visualizzo un messaggio per attivare la geolocalizzazione
